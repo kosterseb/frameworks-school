@@ -1,14 +1,14 @@
 import { User } from './user.js';
 
 export class Admin extends User {
-    adminRole = null;
+    userRole = 'admin';
 
-    constructor(initialUserName, initialUserEmail, initialUserAge, initialAdminRole) {
+    constructor(initialUserName, initialUserEmail, initialUserAge) {
         super(initialUserName, initialUserEmail, initialUserAge);
-        this.adminRole = initialAdminRole;
+        this.adminRole = 'admin';
     }
 
     getAdminDetails() {
-        return `${this.getDetails()}, Role: ${this.adminRole}`;
+        return this.getDetails();
     }
 }

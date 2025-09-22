@@ -4,7 +4,7 @@ import { Admin } from './admin.js';
 let userOne = new User('Martin', 'lala@hello.com', 66);
 let userTwo = new User('Sophie', 'yoyo@goodbye.org', 47);
 let userThree = new User('Kevin', 'kevbae@jubi.com', 29);
-let userFive = new Admin('Clara', 'claradmin@jubi.com', 67, 'superadmin');
+let userFive = new Admin('Clara', 'claradmin@jubi.com', 67);
 
 userOne.getDetails();
 userTwo.getDetails();
@@ -14,11 +14,18 @@ function showDetails() {
     return `
         <h1>User Details</h1>
         <p>${userOne.getDetails()}</p>
+        <p>${userOne.isAdmin()}</p>
+
         <p>${userTwo.getDetails()}</p>
+        <p>${userTwo.isAdmin()}</p>
+
         <p>${userThree.getDetails()}</p>
+        <p>${userThree.isAdmin()}</p>
+
         <p>${userFive.getAdminDetails()}</p>
+        <p>${userFive.isAdmin()}</p>
     `;
 }
 document.getElementById('app').innerHTML = showDetails();
 
-console.log(userOne, userTwo, userThree);
+console.log(userOne, userTwo, userThree, userFive);

@@ -2,6 +2,7 @@ export class User {
     userName = null;
     userEmail = null;
     userAge = null;
+    userRole = 'user';
 
     constructor(initialUserName, initialUserEmail, initialUserAge) {
         this.userName = initialUserName;
@@ -11,5 +12,9 @@ export class User {
 
     getDetails() {
         return `Name: ${this.userName}, Email: ${this.userEmail}, Age: ${this.userAge}`;
+    }
+
+    isAdmin() {
+        return this.userRole === 'admin';
     }
 }
