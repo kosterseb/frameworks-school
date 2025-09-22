@@ -5,7 +5,6 @@ export class Admin extends User {
 
     constructor(initialUserName, initialUserEmail, initialUserAge) {
         super(initialUserName, initialUserEmail, initialUserAge);
-        this.adminRole = 'admin';
     }
 
     getAdminDetails() {

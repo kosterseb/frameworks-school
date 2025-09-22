@@ -6,24 +6,22 @@ let userTwo = new User('Sophie', 'yoyo@goodbye.org', 47);
 let userThree = new User('Kevin', 'kevbae@jubi.com', 29);
 let userFive = new Admin('Clara', 'claradmin@jubi.com', 67);
 
-userOne.getDetails();
-userTwo.getDetails();
-userThree.getDetails();
-
 function showDetails() {
     return `
-        <h1>User Details</h1>
-        <p>${userOne.getDetails()}</p>
-        <p>${userOne.isAdmin()}</p>
+        <h1 class="title">User Details</h1>
+            <ul class="user-list">
+                <li>${userOne.getDetails()}</li>
+                <li>${userOne.isAdmin()}</li>
 
-        <p>${userTwo.getDetails()}</p>
-        <p>${userTwo.isAdmin()}</p>
+                <li>${userTwo.getDetails()}</li>
+                <li>${userTwo.isAdmin()}</li>
 
-        <p>${userThree.getDetails()}</p>
-        <p>${userThree.isAdmin()}</p>
+                <li>${userThree.getDetails()}</li>
+                <li>${userThree.isAdmin()}</li>
 
-        <p>${userFive.getAdminDetails()}</p>
-        <p>${userFive.isAdmin()}</p>
+                <li>${userFive.getAdminDetails()}</li>
+                <li>${userFive.isAdmin()}</li>
+            </ul>
     `;
 }
 document.getElementById('app').innerHTML = showDetails();
