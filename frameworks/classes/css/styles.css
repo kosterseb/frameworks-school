@@ -4,13 +4,6 @@
     padding: 0;
 }
 
-:root {
-    --primary-color: #4CAF50;
-    --secondary-color: #ff5722;
-    --font-color: #333;
-    --background-color: #f4f4f4;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
