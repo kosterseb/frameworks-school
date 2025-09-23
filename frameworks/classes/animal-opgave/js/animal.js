@@ -6,6 +6,6 @@ export class Animal {
     }
 
     describe() {
-        return `This animal is a ${this.name}, ${this.age}.`;
+        return `This animal is a ${this.animal}.`;
     }
 }

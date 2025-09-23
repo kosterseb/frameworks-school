@@ -5,6 +5,7 @@ export class Cat extends Animal {
         super(name);
         super.age = 3;
         this.color = color;
+        this.animal = 'Cat';
     }
 
     meow() {

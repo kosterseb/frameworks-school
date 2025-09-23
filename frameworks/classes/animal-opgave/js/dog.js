@@ -6,6 +6,7 @@ export class Dog extends Animal {
         super(name);
         super.age = 5;
         this.breed = breed;
+        this.animal = 'Dog';
     }
 
     bark() {
