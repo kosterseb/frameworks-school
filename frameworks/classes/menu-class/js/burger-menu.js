@@ -71,21 +71,22 @@ class BurgerMenu extends HTMLElement {
                     transform: translateY(0);
                 }
 
-                .menu-items ::slotted(*) {
-                    display: block;
-                    padding: 12px 16px;
-                    text-decoration: none;
-                    color: #333;
-                    border-bottom: 1px solid #eee;
-                    transition: background-color 0.2s ease;
+                ::slotted(*) {
+                    display: block !important;
+                    padding: 12px 16px !important;
+                    text-decoration: none !important;
+                    color: #333 !important;
+                    border-bottom: 1px solid #eee !important;
+                    transition: background-color 0.2s ease !important;
+                    margin: 0 !important;
                 }
 
-                .menu-items ::slotted(*:last-child) {
-                    border-bottom: none;
+                ::slotted(*:last-child) {
+                    border-bottom: none !important;
                 }
 
-                .menu-items ::slotted(*:hover) {
-                    background-color: #f5f5f5;
+                ::slotted(*:hover) {
+                    background-color: #f5f5f5 !important;
                 }
             </style>
 
@@ -107,17 +108,32 @@ class BurgerMenu extends HTMLElement {
     toggleMenu() {
         this.isOpen = !this.isOpen;
         const burgerMenu = this.shadowRoot.querySelector('.burger-menu');
+        const menuItems = this.shadowRoot.querySelector('.menu-items');
+        
         if (this.isOpen) {
             burgerMenu.classList.add('open');
+            menuItems.classList.add('open');
         } else {
             burgerMenu.classList.remove('open');
+            menuItems.classList.remove('open');
         }
     }
 
     closeMenu() {
         this.isOpen = false;
         const burgerMenu = this.shadowRoot.querySelector('.burger-menu');
+        const menuItems = this.shadowRoot.querySelector('.menu-items');
         burgerMenu.classList.remove('open');
+        menuItems.classList.remove('open');
+    }
+
+    connectedCallback() {
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!this.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
     }
 }
 
